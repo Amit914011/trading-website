@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Onest", sans-serif;
+}
+.banner{
+  height: 100vh;
+  transform: skew();
+}
+.backgroundImage{
+  height: 100vh;
+  width: 100%;
+  background-image: url('https://wallpapers.com/images/featured/dubai-background-zs55bwi5t8gjms6q.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+/* .backgroundImage::before{
+width: 100%;
+height: 100vh;
+content: "";
+background-color: rgba(128, 128, 128, 0.438);
+position: absolute;
+} */
