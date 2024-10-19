@@ -106,10 +106,10 @@ const EnquiryForm = () => {
                   required
                 >
                   <option value="">Select an area of interest</option>
-                  <option value="Web Development">Web Development</option>
-                  <option value="Data Science">Data Science</option>
-                  <option value="Mobile App Development">Mobile App Development</option>
-                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="Web Development">Mutual Fund </option>
+                  <option value="Data Science">Stock Broking</option>
+                  <option value="Mobile App Development">Insurance</option>
+                  <option value="UI/UX Design">Other</option>
                 </select>
                 {errors.areaOfInterest && <p className="text-red-500 text-sm">{errors.areaOfInterest}</p>}
               </div>
