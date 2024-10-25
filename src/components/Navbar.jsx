@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/farhaan meer logo.png';
 import { Link } from 'react-router-dom';
+// import mobilebanner from '../assets/blogimage/grow1.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,11 +34,14 @@ const Navbar = () => {
         navBackground ? 'bg-white shadow-lg' : 'bg-transparent '
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <Link to='/'><img src={logo} className="h-10" alt="Logo" /></Link>
+      <div className="w-full mx-auto px-4 py-4 flex justify-between items-center">
+        <Link to='/'>
+        <img src={logo} className="h-10" alt="Logo" />
+       
+        </Link>
         
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6 p-2">
+        <div className="hidden lg:flex space-x-6 p-2">
           <Link to="/" className=" text-xl hover:text-[#231892]">Home</Link>
           <Link to="/aboutus" className=" text-xl hover:text-[#231892]">About Us</Link>
 
@@ -82,7 +86,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={toggleMenu} className="focus:outline-none">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
@@ -93,15 +97,17 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gray-800 text-white">
-          <Link to="/home" className="block px-4 py-2 hover:bg-gray-700">Home</Link>
-          <Link to="/about" className="block px-4 py-2 hover:bg-gray-700">About Us</Link>
-          <a href="#" className="block px-4 py-2 hover:bg-gray-700">Services & Products</a>
+        <div className="lg:hidden bg-gray-800 text-white">
+          <Link to="/" className="block px-4 py-2 hover:bg-gray-700">Home</Link>
+          <Link to="/aboutus" className="block px-4 py-2 hover:bg-gray-700">About Us</Link>
+          <Link to='/empowringins' className="block px-4 py-2 hover:bg-gray-700">Empowering Investors</Link>
+          <Link to='/mutualfund' className="block px-4 py-2 hover:bg-gray-700">Mutual Fund</Link>
+          <Link to='/healthins' className="block px-4 py-2 hover:bg-gray-700">Health Insurance</Link>
           <Link to="/sipcalculator" className="block px-4 py-2 hover:bg-gray-700">SIP Calculator</Link>
           <Link to="/lumpsumcalculator" className="block px-4 py-2 hover:bg-gray-700">Lumpsum Calculator</Link>
           <Link to="/swpcalculator" className="block px-4 py-2 hover:bg-gray-700">SWP Calculator</Link>
           <Link to="/blog" className="block px-4 py-2 hover:bg-gray-700">Blogs</Link>
-          <Link to="/inquiryform" className="block px-4 py-2 hover:bg-gray-700">Contact</Link>
+          <Link to="/contactus" className="block px-4 py-2 hover:bg-gray-700">Contact</Link>
         </div>
       )}
     </nav>

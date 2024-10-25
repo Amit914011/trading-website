@@ -23,7 +23,7 @@ const SipCalculator = () => {
     const P = parseFloat(monthlyInvestment);
     const annualRate = parseFloat(rateOfReturn) / 100;
     const r = annualRate / 12;
-    const n = parseFloat(timePeriod) * 12;
+    const n = Math.min(parseFloat(timePeriod) * 12, 2400); // Limit to 200 years or 2400 months
 
     let totalInvested = 0;
     let futureValue = 0;
@@ -34,7 +34,7 @@ const SipCalculator = () => {
       totalInvested += P;
       futureValue = futureValue * (1 + r) + P;
 
-      // For chart data (every 12 months or the last month)
+      // Add data for chart every 12 months and table every year (up to 100 years)
       if (i % 12 === 0 || i === n) {
         const year = i / 12;
         data.push({
@@ -43,8 +43,8 @@ const SipCalculator = () => {
           TotalWealth: parseFloat(futureValue.toFixed(2)),
         });
 
-        // For table data (each full year)
-        if (year <= 5) {
+        // For table data up to 100 years
+        if (year <= 100) {
           table.push({
             year,
             TotalInvestment: parseFloat(totalInvested.toFixed(2)),
@@ -61,7 +61,7 @@ const SipCalculator = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center w-full pt-20 justify-center bg-gray-100 p-4">
-      <div className=" bg-white p-6 rounded-lg shadow-md w-[60%]">
+      <div className="bg-white p-6 rounded-lg shadow-md md:w-[60%]">
         <h2 className="text-2xl font-bold mb-4 text-center">SIP Calculator</h2>
 
         <form onSubmit={calculateSIP} className="space-y-4">

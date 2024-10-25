@@ -75,7 +75,7 @@ const SwpCalculator = () => {
 
   return (
     <div className=" flex flex-col items-center justify-center bg-gray-100 p-4 pt-24">
-      <div className="w-[60%] bg-white p-6 rounded-lg shadow-md">
+      <div className="md:w-[60%] bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4 text-center">SWP Calculator</h2>
 
         <form onSubmit={calculateSWP} className="space-y-4">

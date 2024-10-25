@@ -56,37 +56,39 @@ const Blog = () => {
       <div className="w-full bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4 text-center">Portfolio List</h2>
 
-        <table className="table-auto w-full">
-          <thead>
-            <tr className="bg-gray-200 text-gray-700">
-              <th className="p-3 text-left">Star</th>
-              <th className="p-3 text-left">Portfolio Name</th>
-              <th className="p-3 text-left">Category</th>
-              <th className="p-3 text-left">Uploaded Date</th>
-              <th className="p-3 text-left">View</th>
-            </tr>
-          </thead>
-          <tbody>
-            {portfolios.map((portfolio) => (
-              <tr key={portfolio.id} className="border-b">
-                <td className="p-3">
-                  <FaStar className="text-yellow-500" />
-                </td>
-                <td className="p-3">{portfolio.name}</td>
-                <td className="p-3">{portfolio.category}</td>
-                <td className="p-3">{portfolio.date}</td>
-                <td className="p-3">
-                  <button
-                    onClick={() => openPDF(portfolio.pdfUrl)}
-                    className="bg-[#291F93] text-white px-4 py-2 rounded hover:bg-blue-800"
-                  >
-                    View
-                  </button>
-                </td>
+        <div className="overflow-x-auto">
+          <table className="table-auto w-full">
+            <thead>
+              <tr className="bg-gray-200 text-gray-700 text-sm md:text-base">
+                <th className="p-3 text-left">Star</th>
+                <th className="p-3 text-left">Portfolio Name</th>
+                <th className="p-3 text-left hidden md:table-cell">Category</th>
+                <th className="p-3 text-left hidden md:table-cell">Uploaded Date</th>
+                <th className="p-3 text-left">View</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {portfolios.map((portfolio) => (
+                <tr key={portfolio.id} className="border-b text-xs md:text-sm">
+                  <td className="p-3">
+                    <FaStar className="text-yellow-500" />
+                  </td>
+                  <td className="p-3">{portfolio.name}</td>
+                  <td className="p-3 hidden md:table-cell">{portfolio.category}</td>
+                  <td className="p-3 hidden md:table-cell">{portfolio.date}</td>
+                  <td className="p-3">
+                    <button
+                      onClick={() => openPDF(portfolio.pdfUrl)}
+                      className="bg-[#291F93] text-white px-3 py-1 md:px-4 md:py-2 rounded hover:bg-blue-800 text-xs md:text-sm"
+                    >
+                      View
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

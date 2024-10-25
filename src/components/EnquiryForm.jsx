@@ -70,7 +70,7 @@ const EnquiryForm = () => {
         {/* Image Section */}
         <div className="flex items-center justify-center">
           <img 
-          src={enquiry} 
+          src='' 
             alt="Contact Us" 
             className="w-full h-auto rounded-lg shadow-lg"
           />

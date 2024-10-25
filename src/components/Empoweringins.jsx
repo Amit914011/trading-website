@@ -79,7 +79,7 @@ const Empoweringins = () => {
           </div>
         </div>
         {/* card 6 */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        {/* <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <img src="https://via.placeholder.com/300" alt="Investment 3" className="w-full h-48 object-cover" />
           <div className="p-4">
             <h3 className="font-semibold text-xl mb-2">Portfolio Management</h3>
@@ -87,7 +87,7 @@ const Empoweringins = () => {
               Learn how to manage your portfolio effectively to ensure growth and stability over time.
             </p>
           </div>
-        </div>
+        </div> */}
         {/* card 7 */}
         
       </div>

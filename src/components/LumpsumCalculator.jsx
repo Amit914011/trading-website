@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { Pie } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -42,9 +37,9 @@ const LumpsumCalculator = () => {
       ],
     });
 
-    // Calculate future value for each year up to 5 years
+    // Calculate future value for each year up to the specified time period
     const data = [];
-    for (let year = 1; year <= 5; year++) {
+    for (let year = 1; year <= t; year++) {
       const futureValueYear = P * Math.pow(1 + r, year);
       data.push({
         year: year,
@@ -57,7 +52,7 @@ const LumpsumCalculator = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4 pt-20">
-      <div className="w-[60%] bg-white p-6 rounded-lg shadow-md">
+      <div className="md:w-[60%] bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4 text-center">Lumpsum Calculator</h2>
 
         <form onSubmit={calculateLumpsum} className="space-y-4">
